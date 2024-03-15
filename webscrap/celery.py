@@ -17,6 +17,8 @@ app.config_from_object('django.conf:settings', namespace='CELERY')
 
 #celery beat settings
 
+# schedule to run this task every day.
+
 app.conf.beat_schedule = {
     'scrape-proxy-list-every-24-hours': {
         'task': 'proxyapp.tasks.scrape_proxy_list',
